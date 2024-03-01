@@ -1,10 +1,3 @@
-# Create a Database Password
-resource "random_password" "db-user-password" {
-  length           = 16
-  special          = true
-  override_special = "_%"
-}
-
 #create a security group for RDS Database Instance
 resource "aws_security_group" "rds_sg" {
   name = "rds_sg"
