@@ -1,13 +1,21 @@
 variable "username" {
-  type        = string
+  type        = list(string)
   description = "Database username"
-  default     = "lanchonete"
+  default = [
+    "pedido",
+    "cobranca",
+    "producao"
+  ]
 }
 
 variable "database_name" {
-  type        = string
-  description = "Database username"
-  default     = "lanchonetedb"
+  type        = list(string)
+  description = "Database name"
+  default = [
+    "pedido_db",
+    "cobranca_db",
+    "producao_db"
+  ]
 }
 
 variable "aws_region" {

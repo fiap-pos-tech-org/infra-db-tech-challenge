@@ -16,15 +16,16 @@ resource "aws_security_group" "rds_sg" {
 }
 
 # Create RDS Database Instance
-resource "aws_db_instance" "lanchonete_db_rds" {
+resource "aws_db_instance" "db_rds" {
+  count                       = length(var.database_name)
   engine                      = "mysql"
   engine_version              = "5.7.44"
   allocated_storage           = 10
   instance_class              = "db.t3.micro"
   storage_type                = "gp2"
-  identifier                  = var.database_name
-  db_name                     = var.database_name
-  username                    = var.username
+  identifier                  = var.username[count.index]
+  db_name                     = var.database_name[count.index]
+  username                    = var.username[count.index]
   manage_master_user_password = true
   vpc_security_group_ids      = ["${aws_security_group.rds_sg.id}"]
   publicly_accessible         = true
