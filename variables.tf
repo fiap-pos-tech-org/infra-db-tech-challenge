@@ -1,18 +1,23 @@
-# Application Tag Name 
-variable "application_tag_name" {
+variable "username" {
   type        = string
-  description = "Application Tag Name"
-  default = "lanchonete_db"
+  description = "Database username"
+  default     = "lanchonete"
+}
+
+variable "database_name" {
+  type        = string
+  description = "Database username"
+  default     = "lanchonetedb"
 }
 
 variable "aws_region" {
-  type = string
+  type        = string
   description = "AWS Region"
-  default = "us-east-1"
+  default     = "us-east-1"
 }
 
 variable "environment" {
-  type = string
+  type        = string
   description = "environment"
-  default = "dev"
+  default     = "dev"
 }
