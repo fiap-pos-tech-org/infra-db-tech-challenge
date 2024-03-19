@@ -4,7 +4,8 @@ variable "username" {
   default = [
     "pedido",
     "cobranca",
-    "producao"
+    "producao",
+    "gerenciamento"
   ]
 }
 
@@ -14,7 +15,8 @@ variable "database_name" {
   default = [
     "pedido_db",
     "cobranca_db",
-    "producao_db"
+    "producao_db",
+    "gerenciamento_db"
   ]
 }
 
